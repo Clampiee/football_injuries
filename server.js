@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, ".env") }); // ✅ Manually load `.env`
 
 const app = express();
+app.use(cors()); // ✅ Enable CORS for all requests
 const PORT = process.env.PORT || 5000;
 const API_URL = "https://api-football-v1.p.rapidapi.com/v3/injuries?league=88&season=2024";
 const API_KEY = process.env.RAPIDAPI_KEY;

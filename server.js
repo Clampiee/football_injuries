@@ -103,4 +103,4 @@ app.get("/injuries", checkCache, async (req, res) => {
 // ⏳ Refresh Redis cache every 12 hours
 setInterval(fetchAndCacheData, 43200000);
 
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -91,6 +91,16 @@ const fetchAndCacheData = async () => {
     }
 };
 
+app.get("/injuries", async (req, res) => {
+    try {
+        res.json({ message: "Injuries API is working!" });
+    } catch (error) {
+        console.error("❌ Error fetching injuries:", error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
+
 // ✅ API Route - Check cache first, then fetch if needed
 app.get("/injuries", checkCache, async (req, res) => {
     const data = await fetchAndCacheData();
